@@ -5,19 +5,15 @@ from .models.category import Category
 
 # Register your models here.
 
-# @admin.register(Product)  ##### by this also can register model
-
-
+@admin.register(Product)  ##### by this also can register model
 class AdminProduct(admin.ModelAdmin):
-    list_display = ['name', 'price', 'category']
+    list_display = ['name', 'image' , 'price', 'category']
 
 
-# @admin.register(Category)    ##### by this also can register model
-
-
+@admin.register(Category)    ##### by this also can register model
 class AdminCategory(admin.ModelAdmin):
     list_display = ['name']
 
 
-admin.site.register(Product, AdminProduct)
-admin.site.register(Category, AdminCategory)
+# admin.site.register(Product, )
+# admin.site.register(Category, )
