@@ -1,9 +1,10 @@
 from django.urls import path
-from . import views
-from . views import index
+from .views.home import index 
+from .views.login import Login 
+from .views.signup import Signup 
 
 urlpatterns = [
-    path('', views.index),
-    path('signup', views.signup),
-    
+    path("", index, name='homepage'),
+    path("signup", Signup.as_view(), name='signup'),
+    path('login', Login.as_view(), name='login')
 ]
